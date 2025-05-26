@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập nội dung"
+        android:minLines="3" />
+
+    <Button
+        android:id="@+id/btnInternalWrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ghi Internal (getFilesDir)"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btnExternalWrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ghi External (getExternalFilesDir)"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvPath"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Path sẽ hiện ở đây"
+        android:layout_marginTop="16dp"/>
+    <Button
+        android:id="@+id/back"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+</LinearLayout>
