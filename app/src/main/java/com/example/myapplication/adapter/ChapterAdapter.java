@@ -1,8 +1,9 @@
 package com.example.myapplication.adapter;
 
 import com.example.myapplication.R;
+import com.example.myapplication.chapter6.chapter6;
 import com.example.myapplication.model.Chapter;
-import com.example.myapplication.chapter.Chapter5Activity;
+import com.example.myapplication.chapter5.Chapter5Activity;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -44,6 +45,10 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
         holder.itemView.setOnClickListener(v ->  {
             if (chapter.getTitle().contains("Chương 5: Xử lý tập tin, lưu trạng thái ứng dụng")) {
                 Intent intent = new Intent(v.getContext(), Chapter5Activity.class);
+                v.getContext().startActivity(intent);
+            }
+            if (chapter.getTitle().contains("Chương 6: Xử Lý Đa Tiến Trình Và Dịch Vụ Trong Android")) {
+                Intent intent = new Intent(v.getContext(), chapter6.class);
                 v.getContext().startActivity(intent);
             }
     });

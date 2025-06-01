@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trạng thái"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:gravity="center"/>
+
+        <!-- Thread + Handler -->
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:text="1. Thread + Handler"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnThreadHandlerStart"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Bắt đầu" />
+
+            <Button
+                android:id="@+id/btnThreadHandlerOtherWork"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Làm việc khác" />
+        </LinearLayout>
+
+        <!-- AsyncTask -->
+        <TextView
+            android:id="@+id/statusText2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:text="2. AsyncTask (deprecated)"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnAsyncTaskStart"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Bắt đầu" />
+
+            <Button
+                android:id="@+id/btnAsyncTaskOtherWork"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Làm việc khác" />
+        </LinearLayout>
+
+        <!-- ExecutorService -->
+        <TextView
+            android:id="@+id/statusText3"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:text="3. ExecutorService"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnExecutorStart"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Bắt đầu" />
+
+            <Button
+                android:id="@+id/btnExecutorOtherWork"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Làm việc khác" />
+        </LinearLayout>
+
+        <!-- Runnable interface -->
+        <TextView
+            android:id="@+id/statusText4"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:text="4. Runnable interface"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnRunnableStart"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Bắt đầu" />
+
+            <Button
+                android:id="@+id/btnRunnableOtherWork"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Làm việc khác" />
+        </LinearLayout>
+
+        <!-- Handler + Looper -->
+        <TextView
+            android:id="@+id/statusText5"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:text="5. Handler + Looper"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnHandlerLooperStart"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Bắt đầu" />
+
+            <Button
+                android:id="@+id/btnHandlerLooperOtherWork"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Làm việc khác" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

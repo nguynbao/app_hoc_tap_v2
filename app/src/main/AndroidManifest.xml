@@ -5,7 +5,8 @@
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_SMS" />
@@ -23,54 +24,92 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".chapter.four.c"
+            android:name=".chapter6.five.city_activity"
             android:exported="false" />
         <activity
-            android:name=".chapter.four.b"
+            android:name=".chapter6.four.test_service"
+            android:exported="false" />
+        <activity android:name=".chapter6.three.NetworkMonitorActivity" /> <!-- Khai báo BroadcastReceiver -->
+        <receiver
+            android:name=".chapter6.three.BatteryLowReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_LOW" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".chapter6.two.DeepLinkActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="open"
+                    android:scheme="myapp" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".chapter6.four.MyService" />
+
+        <activity
+            android:name=".chapter6.one.mutil_thread"
             android:exported="false" />
         <activity
-            android:name=".chapter.four.a"
+            android:name=".chapter6.chapter6"
             android:exported="false" />
         <activity
-            android:name=".chapter.three.ContentProviderActivity"
+            android:name=".chapter5.four.c"
             android:exported="false" />
         <activity
-            android:name=".chapter.three.SQLiteActivity"
+            android:name=".chapter5.four.b"
             android:exported="false" />
         <activity
-            android:name=".chapter.three.SharedPreferencesActivity"
+            android:name=".chapter5.four.a"
             android:exported="false" />
         <activity
-            android:name=".chapter.three.XmlParserActivity"
+            android:name=".chapter5.three.ContentProviderActivity"
             android:exported="false" />
         <activity
-            android:name=".chapter.three.InternalStorageActivity"
+            android:name=".chapter5.three.SQLiteActivity"
             android:exported="false" />
         <activity
-            android:name=".chapter.two.Other"
+            android:name=".chapter5.three.SharedPreferencesActivity"
             android:exported="false" />
         <activity
-            android:name=".chapter.two.Cache"
+            android:name=".chapter5.three.XmlParserActivity"
             android:exported="false" />
         <activity
-            android:name=".chapter.two.External"
+            android:name=".chapter5.three.InternalStorageActivity"
             android:exported="false" />
         <activity
-            android:name=".chapter.two.Internal"
+            android:name=".chapter5.two.Other"
             android:exported="false" />
         <activity
-            android:name=".chapter.four.four_activiity"
+            android:name=".chapter5.two.Cache"
             android:exported="false" />
         <activity
-            android:name=".chapter.three.three_activity"
+            android:name=".chapter5.two.External"
             android:exported="false" />
         <activity
-            android:name=".chapter.two.two_activity"
+            android:name=".chapter5.two.Internal"
             android:exported="false" />
         <activity
-            android:name=".chapter.one.one_activity"
+            android:name=".chapter5.four.four_activiity"
             android:exported="false" />
-        <activity android:name=".chapter.Chapter5Activity" />
+        <activity
+            android:name=".chapter5.three.three_activity"
+            android:exported="false" />
+        <activity
+            android:name=".chapter5.two.two_activity"
+            android:exported="false" />
+        <activity
+            android:name=".chapter5.one.one_activity"
+            android:exported="false" />
+        <activity android:name=".chapter5.Chapter5Activity" />
         <activity
             android:name=".home.homeActivity"
             android:exported="false" />
