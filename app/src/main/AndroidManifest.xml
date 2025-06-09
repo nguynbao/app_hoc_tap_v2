@@ -5,6 +5,7 @@
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -12,6 +13,9 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+
 
     <application
         android:allowBackup="true"
@@ -23,6 +27,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".chapter7.two.Camera"
+            android:exported="false" />
+        <activity
+            android:name=".chapter7.two.Video"
+            android:exported="false" />
+        <activity
+            android:name=".chapter7.two.Audio"
+            android:exported="false" />
+        <activity
+            android:name=".chapter7.two.chapter7_two"
+            android:exported="false" />
+        <activity
+            android:name=".chapter7.one.truy_xuat"
+            android:exported="false" />
+        <activity
+            android:name=".chapter7.one.strict_mode"
+            android:exported="false" />
+        <activity
+            android:name=".chapter7.one.khai_niem"
+            android:exported="false" />
+        <activity
+            android:name=".chapter7.one.chap7_one"
+            android:exported="false" />
+        <activity
+            android:name=".chapter7.chapter7"
+            android:exported="false" />
         <activity
             android:name=".chapter6.five.city_activity"
             android:exported="false" />

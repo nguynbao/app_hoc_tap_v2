@@ -46,6 +46,7 @@ public class homeActivity extends AppCompatActivity {
         list.add(new Chapter("Chương 3: RecyclerView"));
         list.add(new Chapter("Chương 5: Xử lý tập tin, lưu trạng thái ứng dụng"));
         list.add(new Chapter("Chương 6: Xử Lý Đa Tiến Trình Và Dịch Vụ Trong Android"));
+        list.add(new Chapter("Chương 7: NETWORKING APIs VÀ MULTIMEDIA APIs TRONG LẬP TRÌNH ANDROID"));
         return list;
     }
 

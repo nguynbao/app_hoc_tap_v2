@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/tvChapterTitle"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="85dp"
         android:text="Chapter 1: Introduction"
         android:textSize="18sp"
         android:textStyle="bold"

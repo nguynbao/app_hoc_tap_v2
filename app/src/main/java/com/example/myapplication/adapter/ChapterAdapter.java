@@ -2,6 +2,7 @@ package com.example.myapplication.adapter;
 
 import com.example.myapplication.R;
 import com.example.myapplication.chapter6.chapter6;
+import com.example.myapplication.chapter7.chapter7;
 import com.example.myapplication.model.Chapter;
 import com.example.myapplication.chapter5.Chapter5Activity;
 
@@ -49,6 +50,10 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
             }
             if (chapter.getTitle().contains("Chương 6: Xử Lý Đa Tiến Trình Và Dịch Vụ Trong Android")) {
                 Intent intent = new Intent(v.getContext(), chapter6.class);
+                v.getContext().startActivity(intent);
+            }
+            if (chapter.getTitle().contains("Chương 7: NETWORKING APIs VÀ MULTIMEDIA APIs TRONG LẬP TRÌNH ANDROID")) {
+                Intent intent = new Intent(v.getContext(), chapter7.class);
                 v.getContext().startActivity(intent);
             }
     });
