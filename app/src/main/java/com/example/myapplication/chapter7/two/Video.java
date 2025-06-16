@@ -1,47 +1,76 @@
 package com.example.myapplication.chapter7.two;
 
-import android.net.Uri;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.widget.MediaController;
-import android.widget.Toast;
-import android.widget.VideoView;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.myapplication.R;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 public class Video extends AppCompatActivity {
 
-    private VideoView videoView;
+    private YouTubePlayerView youTubePlayerView;
+    private YouTubePlayer youTubePlayer;
+    private boolean isPaused = false;
+    private boolean isFullScreen = false;
+    private final String videoId = "LPx7ERqFYM0"; // YouTube video ID
+    private ConstraintLayout.LayoutParams originalParams;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
 
-        videoView = findViewById(R.id.videoView);
+        youTubePlayerView = findViewById(R.id.youtube_player_view);
+        getLifecycle().addObserver(youTubePlayerView);
 
-        // URL video sample (free to use)
-        String videoUrl = "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4";
+        AppCompatButton start = findViewById(R.id.start);
+        AppCompatButton pause = findViewById(R.id.pause);
+        AppCompatButton full = findViewById(R.id.full);
 
-        Uri videoUri = Uri.parse(videoUrl);
+        originalParams = (ConstraintLayout.LayoutParams) youTubePlayerView.getLayoutParams();
 
-        // Set MediaController để có các nút Play/Pause
-        MediaController mediaController = new MediaController(this);
-        mediaController.setAnchorView(videoView);
+        // Load player
+        youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+            @Override
+            public void onReady(@NonNull YouTubePlayer player) {
+                youTubePlayer = player;
+                youTubePlayer.cueVideo(videoId, 0);
 
-        videoView.setMediaController(mediaController);
-        videoView.setVideoURI(videoUri);
+                start.setOnClickListener(v -> {
+                    if (isPaused) {
+                        youTubePlayer.play();
+                    } else {
+                        youTubePlayer.loadVideo(videoId, 0);
+                    }
+                    isPaused = false;
+                });
 
-        // Khi video đã chuẩn bị xong
-        videoView.setOnPreparedListener(mp -> {
-            Toast.makeText(this, "Video đã sẵn sàng để phát", Toast.LENGTH_SHORT).show();
-            videoView.start();
-        });
+                pause.setOnClickListener(v -> {
+                    youTubePlayer.pause();
+                    isPaused = true;
+                });
 
-        videoView.setOnErrorListener((mp, what, extra) -> {
-            Toast.makeText(this, "Không thể phát video", Toast.LENGTH_SHORT).show();
-            return true;
+                full.setOnClickListener(v -> toggleFullscreen());
+            }
         });
     }
+
+    private void toggleFullscreen() {
+        if (!isFullScreen) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        } else {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
+        isFullScreen = !isFullScreen;
+    }
+
 }
