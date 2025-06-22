@@ -43,7 +43,7 @@
         <!-- Khai báo API key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="KEY" />
+            android:value="@string/google_maps_key"  />
         <activity
             android:name=".chapter8.two.GeolocationActivity"
             android:exported="false" />

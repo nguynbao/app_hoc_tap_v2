@@ -1,19 +1,30 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
 }
-
+// Đọc local.properties
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(localPropertiesFile.inputStream())
+}
+val mapsApiKey: String = localProperties.getProperty("MAPS_API_KEY") ?: ""
 android {
     namespace = "com.example.myapplication"
     compileSdk = 35
-
+    buildFeatures {
+        buildConfig = true
+    }
     defaultConfig {
+
         applicationId = "com.example.myapplication"
         minSdk = 28
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "MAPS_API_KEY", "\"$mapsApiKey\"")
     }
 
     buildTypes {
@@ -32,7 +43,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -52,6 +62,4 @@ dependencies {
 
     implementation ("com.google.android.gms:play-services-location:21.0.1")
     implementation ("com.google.android.gms:play-services-maps:18.2.0")
-
-
 }
