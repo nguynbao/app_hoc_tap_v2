@@ -15,7 +15,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Xử Lý Đa Tiến Trình Và Dịch Vụ Trong Android"
+        android:text="Telephony APIs và Location Base Services APIs
+"
         android:gravity="center"
         android:textSize="18sp"
         android:textStyle="bold"

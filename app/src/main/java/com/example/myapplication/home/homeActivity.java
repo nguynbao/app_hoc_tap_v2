@@ -48,6 +48,7 @@ public class homeActivity extends AppCompatActivity {
         list.add(new Chapter("Chương 6: Xử Lý Đa Tiến Trình Và Dịch Vụ Trong Android"));
         list.add(new Chapter("Chương 7: NETWORKING APIs VÀ MULTIMEDIA APIs TRONG LẬP TRÌNH ANDROID"));
         list.add(new Chapter("Chương 8: Telephony APIs và Location Base Services APIs"));
+        list.add(new Chapter("Chương 9. Thao tác với thiết bị cảm ứng"));
         return list;
     }
 

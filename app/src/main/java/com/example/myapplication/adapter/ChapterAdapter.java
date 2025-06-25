@@ -4,6 +4,7 @@ import com.example.myapplication.R;
 import com.example.myapplication.chapter6.chapter6;
 import com.example.myapplication.chapter7.chapter7;
 import com.example.myapplication.chapter8.chapter8;
+import com.example.myapplication.chapter9.chapter9;
 import com.example.myapplication.model.Chapter;
 import com.example.myapplication.chapter5.Chapter5Activity;
 
@@ -59,6 +60,10 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
             }
             if (chapter.getTitle().contains("Chương 8: Telephony APIs và Location Base Services APIs")) {
                 Intent intent = new Intent(v.getContext(), chapter8.class);
+                v.getContext().startActivity(intent);
+            }
+            if (chapter.getTitle().contains("Chương 9. Thao tác với thiết bị cảm ứng")) {
+                Intent intent = new Intent(v.getContext(), chapter9.class);
                 v.getContext().startActivity(intent);
             }
     });

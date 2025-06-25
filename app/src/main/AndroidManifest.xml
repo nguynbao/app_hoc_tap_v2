@@ -39,11 +39,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
-        <activity android:name=".chapter8.two.MapsActivity" />
-        <!-- Khai báo API key -->
+        <activity
+            android:name=".chapter9.chapter9_one.ProximityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".chapter9.chapter9_one.LightActivity"
+            android:exported="false" />
+        <activity android:name=".chapter9.chapter9_one.AccelerometerActivity" />
+        <activity
+            android:name=".chapter9.chapter9_two.chapter9_two"
+            android:exported="false" />
+        <activity
+            android:name=".chapter9.chapter9_one.chapter9_one"
+            android:exported="false" />
+        <activity
+            android:name=".chapter9.chapter9"
+            android:exported="false" />
+        <activity android:name=".chapter8.two.MapsActivity" /> <!-- Khai báo API key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"  />
+            android:value="@string/google_maps_key" />
+
         <activity
             android:name=".chapter8.two.GeolocationActivity"
             android:exported="false" />
