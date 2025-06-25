@@ -80,7 +80,10 @@ public class SmsActivity extends AppCompatActivity {
         try {
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(phoneNumber, null, message, null, null);
-            showNotification("Đã gửi tin nhắn", "Tới: " + phoneNumber);
+            String notificationTitle = "Đã gửi tin nhắn";
+            String notificationContent = "Tới: " + phoneNumber + "\nNội dung: " + message;
+            showNotification(notificationTitle, notificationContent);
+
         } catch (Exception e) {
             showNotification("Gửi thất bại", e.getMessage());
         }
